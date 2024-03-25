@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rg:PopupPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:rg="clr-namespace:RGPopup.Maui.Pages;assembly=RGPopup.Maui"
+    x:Class="MauiApp1.PopupPage1"
+    CloseWhenBackgroundIsClicked="True">
+    <rg:PopupPage.Content>
+        <VerticalStackLayout
+            WidthRequest="200"
+            HeightRequest="400"
+            VerticalOptions="Center"
+            HorizontalOptions="Center">
+
+            <Label
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"
+                WidthRequest="120"
+                HeightRequest="50"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                BackgroundColor="Blue"
+                TextColor="White    "
+                Text="No, click me twice!">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                        NumberOfTapsRequired="2"
+                        Command="{Binding LabelTappedCommand}" />
+                </Label.GestureRecognizers>
+                <!-- Tapped="TapGestureRecognizer_Tapped" -->
+
+            </Label>
+
+            <Button
+                Margin="0,20,0,0"
+                WidthRequest="130"
+                Text="Or me twice!">
+                <Button.GestureRecognizers>
+                    <TapGestureRecognizer
+                        NumberOfTapsRequired="2"
+                        Command="{Binding ButtonGestureCommand}" />
+                </Button.GestureRecognizers>
+            </Button>
+
+        </VerticalStackLayout>
+    </rg:PopupPage.Content>
+</rg:PopupPage>

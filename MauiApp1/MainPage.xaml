@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MauiApp1.MainPage">
+
+    <VerticalStackLayout
+        Padding="30,0"
+        Spacing="25">
+
+        <Button
+            Clicked="OnButtonClicked"
+            SemanticProperties.Hint="Counts the number of times you click"
+            Margin="0,50,0,0"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Text="Open Popup" />
+
+        <Label
+            WidthRequest="120"
+            HeightRequest="50"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            BackgroundColor="Red"
+            TextColor="White    "
+            Text="Click me twice!">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer
+                    NumberOfTapsRequired="2"
+                    Tapped="TapGestureRecognizer_Tapped" />
+            </Label.GestureRecognizers>
+
+        </Label>
+    </VerticalStackLayout>
+
+</ContentPage>
